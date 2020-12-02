@@ -1,6 +1,11 @@
-img {
-    width: 150px;
-    height: 200px;
-    margin: auto;
+.welcome {
+    width: 140px;
+    height: auto;
+    margin-left: 60px;
+    margin-right: 60px;
 }
 
+.style {
+    display: flex;
+    align-items: center;
+}

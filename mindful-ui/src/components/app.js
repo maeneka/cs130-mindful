@@ -25,10 +25,17 @@ export default class App extends Component {
                 this.setState({ state: 3 });
                 break;
             case 'login':
-                this.setState({ state: 3 });
+                if(payload.username && payload.pw && payload.username != "" && payload.pw != "")
+                    this.setState({ state: 3 });
+                else
+                    this.setState({ state: 5 });
                 break;
             case 'createUser':
+                console.log(payload);
+                if(payload.username && payload.pw1 && payload.pw2 && payload.pw1 == payload.pw2 && payload.pw1 != "" && payload.username != "")
                 this.setState({ state: 3 });
+                else if (payload.username == "")
+                this.setState({state: 6});
                 break;
             case 'dashboard':
                 this.setState({ state: 4 });
@@ -58,6 +65,14 @@ export default class App extends Component {
 	            return <div id="app">
 	            	<Dashboard fn={this.action} />
 	            </div>
+            case 5:
+                return <div id="app">
+                    <Login fn={this.action} error={true} />
+                </div>
+            case 6:
+    	        return <div id="app">
+    	            <SignUp fn={this.action} error={true} />
+    	        </div>
         }
     }
 
