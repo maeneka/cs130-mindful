@@ -1,0 +1,29 @@
+.green {
+    color: #6ADF89;
+    font-weight: bold;
+}
+
+.red {
+    color: #EB4335;
+    font-weight: bold;
+}
+
+.delta {
+    float: right;
+}
+
+.delta img {
+    height: 15px;
+    width: 15px;
+    margin-right: 5px;
+    position: relative;
+    top: 1px;
+}
+
+.delta p {
+    display: inline-block;
+    font-family: 'Roboto', sans-serif;
+    margin: 0px;
+    margin-top: 5px;
+    text-align: right;
+}
