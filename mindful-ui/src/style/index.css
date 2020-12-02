@@ -1,12 +1,12 @@
 html, body {
-	height: 100%;
-	width: 100%;
+	height: 400px;
+	width: 300px;
 	padding: 0;
 	margin: 0;
-	background: #FAFAFA;
-	font-family: 'Helvetica Neue', arial, sans-serif;
-	font-weight: 400;
-	color: #444;
+	background: #FFFFFF;
+	font-family: 'Roboto', arial, sans-serif;
+	color: #000;
+    border-radius: 8px;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
 }
@@ -16,5 +16,204 @@ html, body {
 }
 
 #app {
-	height: 100%;
+    height: 100%;
+    width: 100%;
+    border-radius: 8px;
+}
+
+.subtitle {
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px;
+    margin: 0px;
+    text-align: center;
+}
+
+.footer {
+    position: relative;
+    bottom: 0px;
+    text-align: center;
+    color: #838383;
+    font-size: 14px;
+    margin: 0px;
+}
+
+a {
+    text-decoration: none;
+    color: #4285F3;
+}
+
+a:active {
+    color: #346ac2;
+}
+
+
+.center {
+    width: 100%;
+    margin: auto;
+    text-align: center;
+}
+
+.footer a {
+    text-decoration: none;
+    color: #4285F3;
+    font-size: 14px;
+}
+
+.page {
+    padding: 20px;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+h1 {
+    font-family: 'Quicksand', sans-serif;
+    font-weight: bold;
+    font-size: 48px;
+    margin: 0px;
+    text-align: center;
+    color: #4285F2;
+}
+
+h2 {
+    font-family: 'Quicksand', sans-serif;
+    font-weight: bold;
+    font-size: 36px;
+    margin: 0px;
+    text-align: center;
+}
+
+
+h3 {
+    font-family: 'Quicksand', sans-serif;
+    font-weight: bold;
+    font-size: 24px;
+    margin: 0px;
+    text-align: center;
+}
+
+.white-btn {
+    display: inline-block;
+    margin: 0px;
+    padding: 7px;
+    border-radius: 15px;
+    background-color: white;
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
+    font-size: 14px;
+    color: #4285F2;
+    align-items: center;
+    text-align: center;
+    text-decoration: none;
+    flex: 0 0 40px;
+}
+
+.mini-button {
+    display: inline-block;
+    margin: 0px;
+    padding: 7px;
+    border-radius: 15px;
+    color: white;
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
+    font-size: 14px;
+    background-color: #4285F2;
+    align-items: center;
+    text-align: center;
+    text-decoration: none;
+    flex: 0 0 40px;
+}
+
+.small-button {
+    display: flex;
+    margin: auto;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    height: 40px;
+    width: 260px;
+    border-radius: 30px;
+    color: white;
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
+    font-size: 14px;
+    background-color: #4285F2;
+    align-items: center;
+    text-align: center;
+    text-decoration: none;
+    flex: 0 0 40px;
+}
+
+.big-button {
+    display: flex;
+    margin: auto;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    height: 60px;
+    width: 260px;
+    border-radius: 30px;
+    color: white;
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
+    font-size: 14px;
+    background-color: #4285F2;
+    align-items: center;
+    text-align: center;
+    text-decoration: none;
+    flex: 0 0 60px;
+}
+
+.small-button:active {
+    background-color: #346ac2;
+}
+
+.big-button:active {
+    background-color: #346ac2;
+}
+
+input {
+    height: 50px;
+    width: 260px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+    padding: 15px;
+    margin: 8px 0px 8px 0px;
+    border-radius: 10px;
+    border: 1px solid #EBEAEC;
+    transition: border 0.25s;
+}
+
+input:focus {
+    border: 1px solid #4285F2;
+    outline: none;
+}
+
+.small-button p {
+    text-decoration: none;
+    color: white;
+    width: 100%;
+}
+
+.big-button p {
+    text-decoration: none;
+    color: white;
+    width: 100%;
+}
+
+.background {
+    background-color: red; 
+    background-image: url("/assets/images/background.png");
+    background-size: cover;
+}
+
+th {
+    font-size: 14px;
+    color: #4285F2;
+    text-align: left;
+    padding: 5px;
+}
+
+td {
+    padding: 5px;
 }

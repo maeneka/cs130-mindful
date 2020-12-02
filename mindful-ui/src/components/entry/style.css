@@ -1,0 +1,25 @@
+.btn {
+    display: inline-block;
+    align-items: center;
+}
+
+.btn img {
+    width: 15px;
+    height: 15px;   
+}
+
+.left {
+    align-items: right;
+}
+
+.right {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+td {
+    font-size: 14px;
+    font-weight: bold;
+    font-family: 'Roboto', sans-serif;
+}

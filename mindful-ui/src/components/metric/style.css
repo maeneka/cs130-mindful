@@ -1,0 +1,17 @@
+.title {
+    display: flex;
+    flex-flow: row;
+    justify-content: space-between;
+}
+
+.title p {
+    display: inline-block;
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.bar {
+    background-color: #4285F4;
+    height: 5px;
+}

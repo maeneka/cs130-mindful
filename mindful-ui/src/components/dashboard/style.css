@@ -1,0 +1,39 @@
+.nav {
+    margin-top: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.breakdown {
+    height: 125px;
+    overflow: scroll;
+}
+
+.breakdown::-webkit-scrollbar { 
+    display: none;
+}
+
+.hr {
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
+    font-size: 48px;
+    height: 50px;
+    color: #000000;
+    text-align: right;
+}
+
+.gray {
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
+    font-size: 14px;
+    color: #A1A4B2;
+    margin: 0px;
+}
+
+.min {
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
+    font-size: 18px;
+    text-align: right;
+}

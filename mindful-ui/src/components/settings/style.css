@@ -1,0 +1,42 @@
+.gray {
+    color: #A1A4B2;
+}
+
+.btn {
+    display: inline-block;
+    align-items: center;
+}
+
+.btn img {
+    width: 15px;
+    height: 15px;
+}
+
+.right {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.inpt {
+    margin: 0px;
+    background-color: #F3F3F3;
+    height: 30px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 15px;
+    border-radius: 15px;
+    width: 160px;
+}
+
+.table {
+    width: 250px;
+}
+
+.entries {
+    overflow: scroll;
+    height: 275px;
+}
+
+.entries::-webkit-scrollbar { 
+    display: none; 
+}

@@ -1,12 +1,79 @@
-import { h } from 'preact';
-import { Router } from 'preact-router';
+import { h, Component } from 'preact';
 
-import Header from './header';
+import Splash from './splash';
+import Login from './login';
+import SignUp from './signup';
+import Settings from './settings';
+import Dashboard from './dashboard';
 
-const App = () => (
-	<div id="app">
-		<Header />
-	</div>
-)
+export default class App extends Component {
 
-export default App;
+    constructor() {
+        super();
+        this.state = { state: 0 };
+    }
+
+    action = (name, payload) => {
+        switch(name) {
+            case 'goToSignUp':
+                this.setState({ state: 2 });
+                break;
+            case 'goToLogin':
+                this.setState({ state: 1 });
+                break;
+            case 'settings':
+                this.setState({ state: 3 });
+                break;
+            case 'login':
+                if(payload.username && payload.pw && payload.username != "" && payload.pw != "")
+                    this.setState({ state: 3 });
+                else
+                    this.setState({ state: 5 });
+                break;
+            case 'createUser':
+                console.log(payload);
+                if(payload.username && payload.pw1 && payload.pw2 && payload.pw1 == payload.pw2 && payload.pw1 != "" && payload.username != "")
+                this.setState({ state: 3 });
+                else if (payload.username == "")
+                this.setState({state: 6});
+                break;
+            case 'dashboard':
+                this.setState({ state: 4 });
+                break;
+        }
+    }
+
+    render(props, state) {
+        switch(state.state) {
+            case 0:
+	            return <div id="app">
+	            	<Splash fn={this.action} />
+	            </div>
+            case 1:
+	            return <div id="app">
+	            	<Login fn={this.action} />
+	            </div>
+            case 2:
+	            return <div id="app">
+	            	<SignUp fn={this.action} />
+	            </div>
+            case 3:
+	            return <div id="app">
+	            	<Settings fn={this.action} />
+	            </div>
+            case 4:
+	            return <div id="app">
+	            	<Dashboard fn={this.action} />
+	            </div>
+            case 5:
+                return <div id="app">
+                    <Login fn={this.action} error={true} />
+                </div>
+            case 6:
+    	        return <div id="app">
+    	            <SignUp fn={this.action} error={true} />
+    	        </div>
+        }
+    }
+
+}
