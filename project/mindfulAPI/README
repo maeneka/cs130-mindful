@@ -1,0 +1,55 @@
+Will have to install mongodb and create a mindfuldb database in order to get started.
+
+
+
+# database
+Run mongod
+To set up database run db_script.js or copy contents of db_script.js into mongo shell
+
+# backend
+Start node server with npm init start -- might have to create new node project because I couldn't copy my npm file over.
+
+## db.js
+sets up connection with database. is called from server.js
+
+schema example:
+  email: "joebruin@ucla.edu", 
+  first_name: "joe", 
+  last_name: "bruin", 
+  limits: {"facebook": 30, "reddit": 40, "twitter":30},
+  mode: "study",
+  timeout_pref: 100,
+  counter: {
+      "facebook": 10,
+      "reddit": 5,
+      "twitter": 0
+    }
+NOTE: limits and counter are JSON objects
+
+## server.js -- all the apis are here
+
+GET list
+  -- created for testing purposes, simply lists all of the users in our database
+  -- query params: None
+ 
+GET getUser
+  -- retrieves all information pertaining to a user using their email id
+  -- query params: email
+  -- this should be called to load the user data into our ui
+  -- response: email, first_name, last_name, limits, mode, timeout_pref, counter
+
+POST newUser
+  -- adds new user to the database
+  -- query params: email, first_name, last_name, limits, mode, timeout_pref, counter
+  -- should be called if we want to show that we can create a new user
+
+POST updateLimits
+  -- update the user-defined screen time limits for each website
+  -- query params: email, limits
+  -- NOTE: we must update the whole limits json object (not the limit for a single website)
+
+POST updateCounter
+  -- update screentimes for each website
+  -- should be called when a user leaves a particular website (ends session on that site)
+  -- query params: email, counter
+  -- NOTE: we must update the whole counter json object (not the counter for a single website)
