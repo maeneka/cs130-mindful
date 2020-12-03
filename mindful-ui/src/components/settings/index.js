@@ -7,15 +7,15 @@ export default class Settings extends Component {
 
     constructor() {
         super();
-        this.state = { 
-            time: 1, 
+        this.state = {
+            time: 1,
             url: "",
             sites: {
                 "www.facebook.com": 2,
                 "www.instagram.com": 1,
                 "www.twitter.com": 1
             },
-            suggestions: {"www.reddit.com": 2}, 
+            suggestions: {"www.reddit.com": 2},
         };
     }
 
@@ -66,7 +66,7 @@ export default class Settings extends Component {
             });
         }
     }
-    
+
     remove = (url) => {
         this.setState(prev => {
             if(url in prev.sites) delete prev.sites[url];
