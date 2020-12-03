@@ -25,13 +25,28 @@ export default class App extends Component {
                 this.setState({ state: 3 });
                 break;
             case 'login':
+                if(payload.username == "" || payload.pw == "") this.setState({ state: 5 });
+
+                // inset code to log in user
+                // payload argument will look like { username: <username>, pw: <password> }
+                // set state to 3 on success
+                // set state to 5 on failure
+
+                // replace the 4 lines below
                 if(payload.username && payload.pw && payload.username != "" && payload.pw != "")
                     this.setState({ state: 3 });
                 else
                     this.setState({ state: 5 });
                 break;
             case 'createUser':
-                console.log(payload);
+                if(payload.username == "" || payload.pw1 == "" || payload.pw1 != payload.pw2) return;
+
+                // inset code to create user
+                // payload argument will look like { username: <username>, pw1: <password>, pw2: <password> }
+                // set state to 3 on success
+                // set state to 6 on failure
+
+                // replace the 4 lines below
                 if(payload.username && payload.pw1 && payload.pw2 && payload.pw1 == payload.pw2 && payload.pw1 != "" && payload.username != "")
                 this.setState({ state: 3 });
                 else if (payload.username == "")
