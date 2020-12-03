@@ -1,5 +1,25 @@
 # mindful-ui
 
+## TODO
+
+Database integration in the following files/methods:
+
+`src/components/app.js`:
+ - action(name, payload)
+
+`src/components/dashboard/index.js`:
+ - getTodayData()
+ - getWeekData()
+ - getMonthData()
+
+`src/components/settings/index.js`:
+ - getUserData()
+ - decrement(url)
+ - increment(rul)
+ - add(url, time)
+ - remove(url)
+ - submit()
+
 ## CLI Commands
 
 ``` bash

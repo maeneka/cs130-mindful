@@ -7,16 +7,44 @@ export default class Settings extends Component {
 
     constructor() {
         super();
+        let setting_data = this.getUserData();
+        let suggestion = this.buildSuggestions(setting_data);
         this.state = {
             time: 1,
             url: "",
-            sites: {
-                "www.facebook.com": 2,
-                "www.instagram.com": 1,
-                "www.twitter.com": 1
-            },
-            suggestions: {"www.reddit.com": 2},
+            sites: setting_data,
+            suggestions: suggestion
         };
+    }
+
+    getUserData() {
+
+        // insert code to get time limits
+        // of user
+        // format as below:
+        return { // keys are urls, values are time in hours
+            "www.facebook.com": 2,
+            "www.instagram.com": 1,
+            "www.twitter.com": 1
+        }
+    }
+
+    buildSuggestions(settings) {
+        let master_suggestions = [
+            "www.facebook.com",
+            "www.instagram.com",
+            "www.twitter.com",
+            "www.youtube.com",
+            "www.reddit.com",
+            "www.netflix.com"
+        ];
+        let suggestions = {};
+        master_suggestions.forEach(e => {
+            if(!(e in settings)) {
+                suggestions[e] = 1;
+            }
+        });
+        return suggestions;
     }
 
     decrement = (url) => {
@@ -26,6 +54,13 @@ export default class Settings extends Component {
                 return prev;
             });
         } else if (url in this.state.sites) {
+
+            // replace this comment block
+            // insert code to decrease time limit of
+            // provided url by 60 minutes
+            // do not decrement if limit is already 0
+
+            //do not modify below
             this.setState(prev => {
                 if(prev.sites[url] > 0) prev.sites[url] = prev.sites[url] - 1;
                 return prev;
@@ -45,6 +80,12 @@ export default class Settings extends Component {
                 return prev;
             });
         } else if (url in this.state.sites) {
+
+            // replace this comment block
+            // insert code to increase time limit of
+            // provided url by 60 minutes
+
+            //do not modify below
             this.setState(prev => {
                 prev.sites[url] = prev.sites[url] + 1;
                 return prev;
@@ -59,6 +100,13 @@ export default class Settings extends Component {
 
     add = (url, time) => {
         if(url != "" && time >= 0) {
+
+            // replace this comment block
+            // insert code to add time limit of
+            // provided url and set to time*60 minutes
+            // (time is in hours)
+
+            //do not modify below
             this.setState(prev => {
                 prev.sites[url] = time;
                 delete prev.suggestions[url];
@@ -69,6 +117,12 @@ export default class Settings extends Component {
 
     remove = (url) => {
         this.setState(prev => {
+
+            // replace this comment block
+            // insert code to remove time limit of
+            // provided url
+
+            //do not modify below
             if(url in prev.sites) delete prev.sites[url];
             return prev;
         });
@@ -83,7 +137,15 @@ export default class Settings extends Component {
 
     submit = () => {
         if(this.state.url != "") {
-            console.log(this.state.url + " " + this.state.time);
+
+            // replace this comment block
+            // insert code to add a time limit
+            // with this.state.url and set time
+            // limit to
+            // this.state.time * 60 Minutes
+            // (this.state.time is in hours)
+
+            //do not modify below
             this.setState(prev => {
                 if(prev.url.toLowerCase() in prev.suggestions) delete prev.suggestions[prev.url.toLowerCase()];
                 if(!(prev.url.toLowerCase() in prev.sites)) prev.sites[prev.url.toLowerCase()] = prev.time;
